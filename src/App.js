@@ -103,7 +103,10 @@ export default function App() {
       }
     },
     multiple: false,
-
+    accept: {
+      "text/csv": [".csv"]
+    },
+    maxFiles: 1
   })
 
   return (
