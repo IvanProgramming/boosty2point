@@ -143,7 +143,7 @@ export default function App() {
       >
         <Container maxWidth="sm">
           <Typography variant="body1">
-            <Link color="inherit" href="https://github.com">
+            <Link color="inherit" href="https://github.com/ivanprogramming/boosty2point">
               Исходный код
             </Link>
           </Typography>
