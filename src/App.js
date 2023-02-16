@@ -68,8 +68,18 @@ export default function App() {
         }, 1000)
         let auction = []
         for (let i = 0; i < subscribers.length; i++) {
-          let name = subscribers[i]["name"].trim("\"")
-          let info = subscribers[i]["info"].trim("\"")
+          let name = ""
+          if (subscribers[i]["name"].startsWith("\"")) {
+            name = subscribers[i]["name"].slice(1, subscribers[i]["name"].length - 1)
+          } else {
+            name = subscribers[i]["name"]
+          }
+          let info = ""
+          if (subscribers[i]["info"].startsWith("\"")) {
+            info = subscribers[i]["info"].slice(1, subscribers[i]["info"].length - 1)
+          } else {
+            info = subscribers[i]["info"]
+          }
           auction.push({
               "fastId": i,
               "id": i,
@@ -88,7 +98,8 @@ export default function App() {
         downloadAnchorNode.remove();
       }
     },
-    multiple: false
+    multiple: false,
+
   })
 
   return (
