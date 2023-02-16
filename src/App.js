@@ -28,7 +28,7 @@ export default function App() {
   const [openLoading, setOpenLoading] = React.useState(false);
   const [openLoaded, setOpenLoaded] = React.useState(false);
 
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     onDrop: (files) => {
       const reader = new FileReader()
       reader.readAsText(files[0])
