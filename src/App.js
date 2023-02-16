@@ -12,14 +12,19 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
-      {'Copyright © '}
-      <Link color="inherit" href="https://github.com/ivanrpgramming">
-        IvanProgramming
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
+    <>
+      <Typography variant="body2" color="text.secondary">
+        {'Copyright © '}
+        <Link color="inherit" href="https://github.com/ivanrpgramming">
+          IvanProgramming
+        </Link>
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Hosted on <Link color="inherit" href="https://vercel.com/">Vercel</Link>
+      </Typography>
+    </>
   );
 }
 
@@ -81,11 +86,11 @@ export default function App() {
             info = subscribers[i]["info"]
           }
           auction.push({
-              "fastId": i,
-              "id": i,
-              "name": `${name} (${info})`,
-              "amount": 1,
-              "extra": null,
+            "fastId": i,
+            "id": i,
+            "name": `${name} (${info})`,
+            "amount": 1,
+            "extra": null,
           })
         }
         // Storing to file and downloading
@@ -104,21 +109,21 @@ export default function App() {
 
   return (
     <>
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-      }}
-    >
-      <CssBaseline />
-      <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
-        <Typography variant="h2" component="h1" gutterBottom>
-          Boosty2Pointauc
-        </Typography>
-        <Typography variant="h5" component="h2" gutterBottom style={{ textAlign: "justify" }}>
-          Концепция, которая позволяет перенести подписчиков из <Link href="https://boosty.to" color="inherit">Boosty</Link> в рулетку <Link href="https://pointauc.ru/" color="inherit">PointAuc</Link>
-        </Typography>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+        }}
+      >
+        <CssBaseline />
+        <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
+          <Typography variant="h2" component="h1" gutterBottom>
+            Boosty2Pointauc
+          </Typography>
+          <Typography variant="h5" component="h2" gutterBottom style={{ textAlign: "justify" }}>
+            Концепция, которая позволяет перенести подписчиков из <Link href="https://boosty.to" color="inherit">Boosty</Link> в рулетку <Link href="https://pointauc.ru/" color="inherit">PointAuc</Link>
+          </Typography>
           <Box
             sx={{
               display: 'flex',
@@ -139,35 +144,35 @@ export default function App() {
               </Typography>
             </Paper>
           </Box>
-      </Container>
-      <Box
-        component="footer"
-        sx={{
-          py: 3,
-          px: 2,
-          mt: 'auto',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
-        }}
-      >
-        <Container maxWidth="sm">
-          <Typography variant="body1">
-            <Link color="inherit" href="https://github.com/ivanprogramming/boosty2point">
-              Исходный код
-            </Link>
-          </Typography>
-          <Copyright />
         </Container>
+        <Box
+          component="footer"
+          sx={{
+            py: 3,
+            px: 2,
+            mt: 'auto',
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[200]
+                : theme.palette.grey[800],
+          }}
+        >
+          <Container maxWidth="sm">
+            <Typography variant="body1">
+              <Link color="inherit" href="https://github.com/ivanprogramming/boosty2point">
+                Исходный код
+              </Link>
+            </Typography>
+            <Copyright />
+          </Container>
+        </Box>
       </Box>
-    </Box>
-    <Snackbar
+      <Snackbar
         open={openLoading}
         autoHideDuration={1}
         message="Обрабатываем файл..."
       />
-    <Snackbar
+      <Snackbar
         open={openLoaded}
         autoHideDuration={1000}
         message="Файл обработан"
