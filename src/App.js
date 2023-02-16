@@ -5,8 +5,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { useDropzone } from 'react-dropzone';
-import { Paper, Snackbar } from '@mui/material';
+import { Button, Paper, Snackbar } from '@mui/material';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 
@@ -14,12 +15,10 @@ function Copyright() {
   return (
     <>
       <Typography variant="body2" color="text.secondary">
-        {'Copyright © '}
-        <Link color="inherit" href="https://github.com/ivanrpgramming">
+        by <Link color="inherit" href="https://github.com/ivanrpgramming">
           IvanProgramming
-        </Link>
+        </Link> {' '}
         {new Date().getFullYear()}
-        {'.'}
       </Typography>
       <Typography variant="body2" color="text.secondary">
         Hosted on <Link color="inherit" href="https://vercel.com/">Vercel</Link>
@@ -158,11 +157,9 @@ export default function App() {
           }}
         >
           <Container maxWidth="sm">
-            <Typography variant="body1">
-              <Link color="inherit" href="https://github.com/ivanprogramming/boosty2point">
-                Исходный код
-              </Link>
-            </Typography>
+            <Button variant="text" href="https://github.com/ivanprogramming/boosty2point" color='inherit'>
+                 <GitHubIcon style={{marginRight: 10}}/><b>Исходный код</b>
+            </Button>
             <Copyright />
           </Container>
         </Box>
